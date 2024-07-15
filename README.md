@@ -1,0 +1,2 @@
+# TeamGameDevBootcamp
+チームで大規模Unity開発をするための、予行練習リポジトリ
