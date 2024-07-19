@@ -1,6 +1,7 @@
 using System;
 
-class Hp{
+public class Hp
+{
     private readonly int _maxHp;
     public int maxHp { get { return _maxHp; } }
     private readonly int _currentHp;

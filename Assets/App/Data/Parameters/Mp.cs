@@ -1,6 +1,7 @@
 using System;
 
-class Mp{
+public class Mp
+{
     private readonly int _maxMp;
     public int maxMp { get { return _maxMp; } }
     private readonly int _currentMp;
