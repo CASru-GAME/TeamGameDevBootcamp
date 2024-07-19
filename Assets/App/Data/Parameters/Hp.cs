@@ -21,16 +21,7 @@ public class Hp
         this._maxHp = maxHpValue;
     }
 
-    public Hp(int maxHpValue) : this(maxHpValue, maxHpValue)
-    {
-        if (maxHpValue < 0)
-        {
-            throw new ArgumentException("Value cannot be negative");
-        }
-
-        this._maxHp = maxHpValue;
-        this._currentHp = maxHpValue;
-    }
+    public Hp(int maxHpValue) : this(maxHpValue, maxHpValue){}
 
     public Hp Add(Hp addedHp)
     {

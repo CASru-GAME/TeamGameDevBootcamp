@@ -21,16 +21,7 @@ public class Mp
         this._maxMp = maxMpValue;
     }
 
-    public Mp(int maxMpValue) : this(maxMpValue, maxMpValue)
-    {
-        if (maxMpValue < 0)
-        {
-            throw new ArgumentException("Value cannot be negative");
-        }
-
-        this._maxMp = maxMpValue;
-        this._currentMp = maxMpValue;
-    }
+    public Mp(int maxMpValue) : this(maxMpValue, maxMpValue){}
 
     public Mp Add(Mp addedMp)
     {
