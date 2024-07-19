@@ -7,6 +7,7 @@ public class Mp
     private readonly int _currentMp;
     public int currentMp { get { return _currentMp; } }
 
+    //引数が２個の場合のコンストラクタ
     public Mp(int maxMpValue, int currentMpValue)
     {
 		
@@ -14,6 +15,7 @@ public class Mp
         if (currentMpValue < 0) {
             throw new ArgumentException("Value cannot be negative");
         }
+        // maxMpを超える時には例外を発生させる
         else if (currentMpValue > this._maxMp) {
             throw new ArgumentException("Value cannot over maxMp");
         }
@@ -21,16 +23,23 @@ public class Mp
         this._maxMp = maxMpValue;
     }
 
+    //引数が１個の場合、this(maxMpValue, maxMpValue)の部分で上のコンストラクタを使用し、
+    //同じ値をcurrentMpとmaxMpに代入している。
     public Mp(int maxMpValue) : this(maxMpValue, maxMpValue){}
 
-    public Mp Add(Mp addedMp)
+    public Mp AddCurrentMp(Mp addedMp)
     {
         if (this._currentMp + addedMp.maxMp > this._maxMp) {
-            return new Mp(this._maxMp, this._maxMp);
+            return new Mp(this._maxMp);
         }
         else {
-            return new Mp(this._maxMp, this._maxMp + addedMp.maxMp);
+            return new Mp(this._maxMp, this._currentMp + addedMp.maxMp);
         }
+    }
+
+    public Mp AddMaxMp(Mp addedMp)
+    {
+        return new Mp(this._maxMp + addedMp.maxMp);
     }
 
     public Mp Substract(Mp substructedMp)
