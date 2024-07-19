@@ -7,7 +7,8 @@ public class Mp
     private readonly int _currentMp;
     public int currentMp { get { return _currentMp; } }
 
-    public Mp(int maxMpValue, int currentMpValue) {
+    public Mp(int maxMpValue, int currentMpValue)
+    {
 		
         // 0より小さい時には例外を発生させる
         if (currentMpValue < 0) {
@@ -20,21 +21,34 @@ public class Mp
         this._maxMp = maxMpValue;
     }
 
-    public Mp Add(int addedMp) {
-        if (this._currentMp + addedMp > this._maxMp) {
+    public Mp(int maxMpValue) : this(maxMpValue, maxMpValue)
+    {
+        if (maxMpValue < 0)
+        {
+            throw new ArgumentException("Value cannot be negative");
+        }
+
+        this._maxMp = maxMpValue;
+        this._currentMp = maxMpValue;
+    }
+
+    public Mp Add(Mp addedMp)
+    {
+        if (this._currentMp + addedMp.maxMp > this._maxMp) {
             return new Mp(this._maxMp, this._maxMp);
         }
         else {
-            return new Mp(this._maxMp, this._maxMp + addedMp);
+            return new Mp(this._maxMp, this._maxMp + addedMp.maxMp);
         }
     }
 
-    public Mp Substract(int substructedMp) {
-        if (this._currentMp - substructedMp < 0) {
+    public Mp Substract(Mp substructedMp)
+    {
+        if (this._currentMp - substructedMp.maxMp < 0) {
             return new Mp(this._maxMp, 0);
         }
         else {
-            return new Mp(this._maxMp, this._currentMp - substructedMp);
+            return new Mp(this._maxMp, this._currentMp - substructedMp.maxMp);
         }
     }
 }
