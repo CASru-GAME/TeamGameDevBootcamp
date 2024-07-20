@@ -9,10 +9,10 @@ namespace App.Data
     */
     public class Mp
     {
-        private readonly int _maxMp;
         /// <summary>
         /// 最大Mp
         /// </summary>
+        private readonly int _maxMp;
         public int MaxMp { get { return _maxMp; } }
         /// <summary>
         /// 現在のMp
