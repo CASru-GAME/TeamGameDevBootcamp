@@ -9,10 +9,10 @@ namespace App.Data
     */
     public class Hp
     {
-        private readonly int _maxHp;
         /// <summary>
         /// 最大Hp
         /// </summary>
+        private readonly int _maxHp;
         public int MaxHp { get { return _maxHp; } }
         /// <summary>
         /// 現在のHp
