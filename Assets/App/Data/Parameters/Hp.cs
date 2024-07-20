@@ -1,54 +1,74 @@
 using System;
 
-public class Hp
+namespace App.Data
 {
-    private readonly int _maxHp;
-    public int maxHp { get { return _maxHp; } }
-    private readonly int _currentHp;
-    public int currentHp { get { return _currentHp; } }
-
-    //引数が２個の場合のコンストラクタ
-    public Hp(int maxHpValue, int currentHpValue)
+     /**  
+    <summary>
+    Hpの値オブジェクト
+    </summary>
+    */
+    public class Hp
     {
-		
-        // 0より小さい時には例外を発生させる
-        if (currentHpValue < 0) {
-            throw new ArgumentException("Value cannot be negative");
-        }
-        // maxHpを超える時には例外を発生させる
-        else if (currentHpValue > this._maxHp) {
-            throw new ArgumentException("Value cannot over maxHp");
-        }
-        this._currentHp = currentHpValue;
-        this._maxHp = maxHpValue;
-    }
+        private readonly int _maxHp;
+        /// <summary>
+        /// 最大Hp
+        /// </summary>
+        public int MaxHp { get { return _maxHp; } }
+        /// <summary>
+        /// 現在のHp
+        /// </summary>
+        private readonly int _currentHp;
+        public int CurrentHp { get { return _currentHp; } }
 
-    //引数が１個の場合、this(maxHpValue, maxHpValue)の部分で上のコンストラクタを使用し、
-    //同じ値をcurrentHpとmaxHpに代入している。
-    public Hp(int maxHpValue) : this(maxHpValue, maxHpValue){}
+        //引数が２個の場合のコンストラクタ
+        private Hp(int maxHp, int currentHp)
+        {
 
-    public Hp AddCurrentHp(Hp addedHp)
-    {
-        if (this._currentHp + addedHp.maxHp > this._maxHp) {
-            return new Hp(this._maxHp);
+            // 0より小さい時には例外を発生させる
+            if (currentHp < 0)
+            {
+                throw new ArgumentException("Value cannot be negative");
+            }
+            // maxHpを超える時には例外を発生させる
+            else if (currentHp > this._maxHp)
+            {
+                throw new ArgumentException("Value cannot over maxHp");
+            }
+            this._currentHp = currentHp;
+            this._maxHp = maxHp;
         }
-        else {
-            return new Hp(this._maxHp, this._currentHp + addedHp.maxHp);
-        }
-    }
 
-    public Hp AddMaxHp(Hp addedHp)
-    {
-        return new Hp(this._maxHp + addedHp.maxHp);
-    }
+        //引数が１個の場合、this(maxHpValue, maxHpValue)の部分で上のコンストラクタを使用し、
+        //同じ値をcurrentHpとmaxHpに代入している。
+        public Hp(int maxHpValue) : this(maxHpValue, maxHpValue) { }
 
-    public Hp Substract(Hp substructedHp)
-    {
-        if (this._currentHp - substructedHp.maxHp < 0) {
-            return new Hp(this._maxHp, 0);
+        public Hp AddCurrentHp(readonly Hp value)
+        {
+            if (this._currentHp + value.CurrentHp > this._maxHp)
+            {
+                return new Hp(this._maxHp, this._maxHp);
+            }
+            else
+            {
+                return new Hp(this._maxHp, this._currentHp + value.CurrentHp);
+            }
         }
-        else {
-            return new Hp(this._maxHp, this._currentHp - substructedHp.maxHp);
+
+        public Hp AddMaxHp(Hp value)
+        {
+            return new Hp(this._maxHp + value.CurrentHp, this._currentHp);
+        }
+
+        public Hp SubstractCurrentHp(Hp value)
+        {
+            if (this._currentHp - value.CurrentHp < 0)
+            {
+                return new Hp(this._maxHp, 0);
+            }
+            else
+            {
+                return new Hp(this._maxHp, this._currentHp - value.CurrentHp);
+            }
         }
     }
 }
