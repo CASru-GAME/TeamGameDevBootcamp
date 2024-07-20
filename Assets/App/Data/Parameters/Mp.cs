@@ -42,7 +42,7 @@ namespace App.Data
         //同じ値をcurrentMpとmaxMpに代入している。
         public Mp(int maxMpValue) : this(maxMpValue, maxMpValue) { }
 
-        public Mp AddCurrentMp(readonly Mp value)
+        public Mp AddCurrentMp(Mp value)
         {
             if (this._currentMp + value.CurrentMp > this._maxMp)
             {

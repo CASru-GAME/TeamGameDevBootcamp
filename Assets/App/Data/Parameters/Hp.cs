@@ -42,7 +42,7 @@ namespace App.Data
         //同じ値をcurrentHpとmaxHpに代入している。
         public Hp(int maxHpValue) : this(maxHpValue, maxHpValue) { }
 
-        public Hp AddCurrentHp(readonly Hp value)
+        public Hp AddCurrentHp(Hp value)
         {
             if (this._currentHp + value.CurrentHp > this._maxHp)
             {
