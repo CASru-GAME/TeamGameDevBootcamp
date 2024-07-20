@@ -2,11 +2,11 @@ using System;
 
 namespace App.Data
 {
-     /**  
-    <summary>
-    Hpの値オブジェクト
-    </summary>
-    */
+    /**  
+   <summary>
+   Hpの値オブジェクト
+   </summary>
+   */
     public class Hp
     {
         /// <summary>
@@ -30,7 +30,7 @@ namespace App.Data
                 throw new ArgumentException("Value cannot be negative");
             }
             // maxHpを超える時には例外を発生させる
-            else if (currentHp > this._maxHp)
+            else if (currentHp > maxHp)
             {
                 throw new ArgumentException("Value cannot over maxHp");
             }
@@ -69,6 +69,11 @@ namespace App.Data
             {
                 return new Hp(this._maxHp, this._currentHp - value.CurrentHp);
             }
+        }
+
+        public void Dump(string message)
+        {
+            UnityEngine.Debug.Log($"Message : {message}, MaxHp : {this._maxHp}, CurrentHp : {this._currentHp}");
         }
     }
 }
