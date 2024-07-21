@@ -9,15 +9,15 @@ namespace App.Data
     */
     public class Mp
     {
+        private readonly int _maxMp;
         /// <summary>
         /// 最大Mp
         /// </summary>
-        private readonly int _maxMp;
         public int MaxMp { get { return _maxMp; } }
+        private readonly int _currentMp;
         /// <summary>
         /// 現在のMp
         /// </summary>
-        private readonly int _currentMp;
         public int CurrentMp { get { return _currentMp; } }
 
         //引数が２個の場合のコンストラクタ
