@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/App/Scenes/BattleEntryPoint/BattleEntryPoint.unity
     guid: 1413babc3ea3c0a4ead1e05fdf58564a
   - enabled: 1
-    path: Assets/App/Scenes/BattleEntryPoint/Common.unity
+    path: Assets/App/Scenes/BattleEntryPoint/BattleCommon.unity
     guid: 455476565567550448e6138a5610c27d
   - enabled: 1
     path: Assets/App/Scenes/BattleEntryPoint/BattleDebug.unity

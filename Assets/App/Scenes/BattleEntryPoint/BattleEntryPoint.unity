@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScenePaths:
-  - Assets/App/Scenes/BattleEntryPoint/Common.unity
+  - Assets/App/Scenes/BattleEntryPoint/BattleCommon.unity
   - Assets/App/Scenes/BattleEntryPoint/BattleDebug.unity
 --- !u!4 &384078996
 Transform:
