@@ -2,11 +2,6 @@ using System;
 
 namespace App.Data
 {
-     /**  
-    <summary>
-    Mpの値オブジェクト
-    </summary>
-    */
     public class Mp
     {
         private readonly int _maxMp;

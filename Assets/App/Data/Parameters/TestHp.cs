@@ -1,9 +1,6 @@
 ﻿using App.Data;
 using UnityEngine;
 
-// 実際に使用するときのコードがきもい
-// コンストラクタがミスってた（代入出来てなかった）
-
 public class TestHp : MonoBehaviour
 {
     private void Start()
@@ -37,7 +34,7 @@ public class TestHp : MonoBehaviour
         Hp hp = new(100);
 
         // MaxHpとCurrentHpは違う値で初期設定できない
-        // Hp errorHp = new(100, 50);
+        // Hp errorHp = new(50, 100);
 
         // 初期HPを表示 (100,100)
         hp.Dump("初期HPを表示 : (100,100)");
@@ -73,38 +70,37 @@ public class TestHp : MonoBehaviour
         // 現在のHPを50減らす
         Hp damagedHp = overRecoveredHp.SubstractCurrentHp(new Hp(50));
 
-        // (100,50)
-        damagedHp.Dump("50ダメージを与えた後 : (100,50)");
+        // (50,100)
+        damagedHp.Dump("50ダメージを与えた後 : (50,100)");
 
         // 現在のHPを30増やす
         Hp recoveredHp = damagedHp.AddCurrentHp(new Hp(30));
 
-        // (100,80)
-        recoveredHp.Dump("30回復した後 : (100,80)");
+        // (80,100)
+        recoveredHp.Dump("30回復した後 : (80,100)");
     }
 
     private void TestSubstractCurrentHp()
     {
         Hp hp = new(100);
 
-        // ここから命名ちゃんと書くの諦めました
         // 現在のHPを50減らす
         Hp hp1 = hp.SubstractCurrentHp(new Hp(50));
 
-        // (100,50)
-        hp1.Dump("50ダメージを与えた後 : (100,50)");
+        // (50,100)
+        hp1.Dump("50ダメージを与えた後 : (50,100)");
 
         // 現在のHPを50減らす
         Hp hp2 = hp1.SubstractCurrentHp(new Hp(50));
 
-        // (100,0)
-        hp2.Dump("さらに50ダメージを与えた後 : (100,0)");
+        // (0,100)
+        hp2.Dump("さらに50ダメージを与えた後 : (0,100)");
 
         // 現在のHPを50減らす
         Hp hp3 = hp2.SubstractCurrentHp(new Hp(50));
 
-        // (100,0)
-        hp3.Dump("さらに50ダメージを与えた後。0未満にならない : (100,0)");
+        // (0,100)
+        hp3.Dump("さらに50ダメージを与えた後。0未満にならない : (0,100)");
     }
 
     private void TestAddMaxHp()
@@ -114,7 +110,7 @@ public class TestHp : MonoBehaviour
         // 最大HPを50増やす
         Hp hp1 = hp.AddMaxHp(new Hp(50));
 
-        // (150,100)
-        hp1.Dump("最大HPを50増やした後 : (150,100)");
+        // (100,150)
+        hp1.Dump("最大HPを50増やした後 : (100,150)");
     }
 }
