@@ -84,7 +84,7 @@ namespace App.Data
         /// </summary>
         /// <param name="value">減少する現在のHPのインスタンス</param>
         /// <returns>最大HPを追加した新しいHpインスタンス</returns>
-        public Hp SubstractCurrentHp(Hp value)
+        public Hp SubtractCurrentHp(Hp value)
         {
             if (this._currentHp - value.CurrentHp < 0)
             {

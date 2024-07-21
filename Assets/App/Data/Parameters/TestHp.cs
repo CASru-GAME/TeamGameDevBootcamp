@@ -19,9 +19,9 @@ public class TestHp : MonoBehaviour
 
         TestAddCurrentHp();
 
-        Debug.Log("SubstractCurrentHpのテスト");
+        Debug.Log("SubtractCurrentHpのテスト");
 
-        TestSubstractCurrentHp();
+        TestSubtractCurrentHp();
 
         Debug.Log("AddMaxHpのテスト");
 
@@ -68,7 +68,7 @@ public class TestHp : MonoBehaviour
         overRecoveredHp.Dump("50回復した後。過回復で変化なし : (100,100)");
 
         // 現在のHPを50減らす
-        Hp damagedHp = overRecoveredHp.SubstractCurrentHp(new Hp(50));
+        Hp damagedHp = overRecoveredHp.SubtractCurrentHp(new Hp(50));
 
         // (50,100)
         damagedHp.Dump("50ダメージを与えた後 : (50,100)");
@@ -80,24 +80,24 @@ public class TestHp : MonoBehaviour
         recoveredHp.Dump("30回復した後 : (80,100)");
     }
 
-    private void TestSubstractCurrentHp()
+    private void TestSubtractCurrentHp()
     {
         Hp hp = new(100);
 
         // 現在のHPを50減らす
-        Hp hp1 = hp.SubstractCurrentHp(new Hp(50));
+        Hp hp1 = hp.SubtractCurrentHp(new Hp(50));
 
         // (50,100)
         hp1.Dump("50ダメージを与えた後 : (50,100)");
 
         // 現在のHPを50減らす
-        Hp hp2 = hp1.SubstractCurrentHp(new Hp(50));
+        Hp hp2 = hp1.SubtractCurrentHp(new Hp(50));
 
         // (0,100)
         hp2.Dump("さらに50ダメージを与えた後 : (0,100)");
 
         // 現在のHPを50減らす
-        Hp hp3 = hp2.SubstractCurrentHp(new Hp(50));
+        Hp hp3 = hp2.SubtractCurrentHp(new Hp(50));
 
         // (0,100)
         hp3.Dump("さらに50ダメージを与えた後。0未満にならない : (0,100)");
