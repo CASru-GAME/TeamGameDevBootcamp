@@ -9,15 +9,15 @@ namespace App.Data
    */
     public class Hp
     {
+        private readonly int _maxHp;
         /// <summary>
         /// 最大Hp
         /// </summary>
-        private readonly int _maxHp;
         public int MaxHp { get { return _maxHp; } }
+        private readonly int _currentHp;
         /// <summary>
         /// 現在のHp
         /// </summary>
-        private readonly int _currentHp;
         public int CurrentHp { get { return _currentHp; } }
 
         //引数が２個の場合のコンストラクタ
