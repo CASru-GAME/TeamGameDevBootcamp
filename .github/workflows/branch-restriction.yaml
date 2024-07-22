@@ -24,4 +24,6 @@ jobs:
             fi
           done
           echo "Branch creation from $SOURCE_BRANCH is not allowed."
+          echo "Allowed branches are: ${ALLOWED_BRANCHES[@]}"
+          echo "Branch name: $BRANCH_NAME"
           exit 1
