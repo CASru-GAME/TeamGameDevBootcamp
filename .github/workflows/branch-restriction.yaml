@@ -1,0 +1,27 @@
+name: Branch Restriction
+
+on:
+  create:
+    branches:
+      - '*'
+  push:
+    branches:
+      - '*'
+
+jobs:
+  restrict-branch-creation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch creation
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
+          SOURCE_BRANCH: ${{ github.event.before }}
+        run: |
+          ALLOWED_BRANCHES=("main" "develop")
+          for branch in "${ALLOWED_BRANCHES[@]}"; do
+            if [[ "$SOURCE_BRANCH" == *"$branch" ]]; then
+              exit 0
+            fi
+          done
+          echo "Branch creation from $SOURCE_BRANCH is not allowed."
+          exit 1
