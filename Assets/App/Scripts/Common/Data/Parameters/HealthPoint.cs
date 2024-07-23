@@ -1,6 +1,6 @@
 using System;
 
-namespace App.Data
+namespace App.Common.Data
 {
     /// <summary>
     /// ゲーム内キャラクターのヘルスポイント（HP）を管理する
