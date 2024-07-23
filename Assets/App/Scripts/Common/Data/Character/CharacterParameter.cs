@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace App.Data
+namespace App.Common.Data
 {
     public class CharacterParameter
     {

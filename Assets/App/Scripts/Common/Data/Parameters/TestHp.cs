@@ -1,4 +1,4 @@
-﻿using App.Data;
+﻿using App.Common.Data;
 using UnityEngine;
 
 public class TestHp : MonoBehaviour

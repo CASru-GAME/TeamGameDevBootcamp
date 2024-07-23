@@ -1,6 +1,6 @@
 using System;
 
-namespace App.Data
+namespace App.Common.Data
 {
     /// <summary>
     /// ゲーム内キャラクターのマジックポイント（MagicPoint, Mp）を管理する

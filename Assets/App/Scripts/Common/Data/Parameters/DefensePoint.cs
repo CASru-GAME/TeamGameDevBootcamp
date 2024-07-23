@@ -1,6 +1,6 @@
 using System;
 
-namespace App.Data
+namespace App.Common.Data
 {
     public class DefensePoint
     {
