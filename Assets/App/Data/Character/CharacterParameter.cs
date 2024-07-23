@@ -5,7 +5,10 @@ namespace App.Data
     public class CharacterParameter
     {
         public string Name { get; private set; }
-        public Hp hp;
-        public Mp mp;
+        // TODO : パラメータのプロパティを設定する
+        AttackPoint Atk;
+        MagicAttackPoint Mat;
+        DefensePoint Def;
+        MagicDefensePoint Mde;
     }
 }
