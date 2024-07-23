@@ -6,9 +6,11 @@ namespace App.Data
     {
         public string Name { get; private set; }
         // TODO : パラメータのプロパティを設定する
-        AttackPoint Atk;
-        MagicAttackPoint Mat;
-        DefensePoint Def;
-        MagicDefensePoint Mde;
+        public HealthPoint hp;
+        public MagicPoint mp;
+        public AttackPoint Atk;
+        public MagicAttackPoint Mat;
+        public DefensePoint Def;
+        public MagicDefensePoint Mde;
     }
 }
