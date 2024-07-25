@@ -1,4 +1,4 @@
-﻿using App.Data;
+﻿using App.Common.Data;
 using UnityEngine;
 
 public class TestHp : MonoBehaviour
@@ -15,25 +15,25 @@ public class TestHp : MonoBehaviour
 
         TestProperty();
 
-        Debug.Log("AddCurrentHpのテスト");
+        Debug.Log("AddCurrentValueのテスト");
 
-        TestAddCurrentHp();
+        TestAddCurrentValue();
 
-        Debug.Log("SubtractCurrentHpのテスト");
+        Debug.Log("SubtractCurrentValueのテスト");
 
-        TestSubtractCurrentHp();
+        TestSubtractCurrentValue();
 
-        Debug.Log("AddMaxHpのテスト");
+        Debug.Log("AddMaxValueのテスト");
 
-        TestAddMaxHp();
+        TestAddMaxValue();
     }
 
     private void TestConstructor()
     {
-        // MaxHp : 100, CurrentHp : 100で初期設定
-        Hp hp = new(100);
+        // MaxValue : 100, CurrentValue : 100で初期設定
+        HealthPoint hp = new(100);
 
-        // MaxHpとCurrentHpは違う値で初期設定できない
+        // MaxValueとCurrentValueは違う値で初期設定できない
         // Hp errorHp = new(50, 100);
 
         // 初期HPを表示 (100,100)
@@ -42,73 +42,73 @@ public class TestHp : MonoBehaviour
 
     private void TestProperty()
     {
-        Hp hp = new(100);
+        HealthPoint hp = new(100);
 
         // 現在のHPを表示 (100)
-        Debug.Log($"Message : 現在のHPを表示 (100), CurrentHp : {hp.CurrentHp}");
+        Debug.Log($"Message : 現在のHPを表示 (100), CurrentValue : {hp.CurrentValue}");
 
         // 最大HPを表示 (100)
-        Debug.Log($"Message : 最大HPを表示 (100), MaxHp : {hp.MaxHp}");
+        Debug.Log($"Message : 最大HPを表示 (100), MaxValue : {hp.MaxValue}");
 
         // 現在のHPを書き換える (Error)
-        // hp.CurrentHp = 80;
+        // hp.CurrentValue = 80;
 
         // 最大HPを書き換える (Error)
-        // hp.MaxHp = 80;
+        // hp.MaxValue = 80;
     }
 
-    private void TestAddCurrentHp()
+    private void TestAddCurrentValue()
     {
-        Hp hp = new(100);
+        HealthPoint hp = new(100);
 
         // 現在のHPを50増やす（変化なし）
-        Hp overRecoveredHp = hp.AddCurrentHp(new Hp(50));
+        HealthPoint overRecoveredHp = hp.AddCurrentValue(new HealthPoint(50));
 
         // (100,100)
         overRecoveredHp.Dump("50回復した後。過回復で変化なし : (100,100)");
 
         // 現在のHPを50減らす
-        Hp damagedHp = overRecoveredHp.SubtractCurrentHp(new Hp(50));
+        HealthPoint damagedHp = overRecoveredHp.SubtractCurrentValue(new HealthPoint(50));
 
         // (50,100)
         damagedHp.Dump("50ダメージを与えた後 : (50,100)");
 
         // 現在のHPを30増やす
-        Hp recoveredHp = damagedHp.AddCurrentHp(new Hp(30));
+        HealthPoint recoveredHp = damagedHp.AddCurrentValue(new HealthPoint(30));
 
         // (80,100)
         recoveredHp.Dump("30回復した後 : (80,100)");
     }
 
-    private void TestSubtractCurrentHp()
+    private void TestSubtractCurrentValue()
     {
-        Hp hp = new(100);
+        HealthPoint hp = new(100);
 
         // 現在のHPを50減らす
-        Hp hp1 = hp.SubtractCurrentHp(new Hp(50));
+        HealthPoint hp1 = hp.SubtractCurrentValue(new HealthPoint(50));
 
         // (50,100)
         hp1.Dump("50ダメージを与えた後 : (50,100)");
 
         // 現在のHPを50減らす
-        Hp hp2 = hp1.SubtractCurrentHp(new Hp(50));
+        HealthPoint hp2 = hp1.SubtractCurrentValue(new HealthPoint(50));
 
         // (0,100)
         hp2.Dump("さらに50ダメージを与えた後 : (0,100)");
 
         // 現在のHPを50減らす
-        Hp hp3 = hp2.SubtractCurrentHp(new Hp(50));
+        HealthPoint hp3 = hp2.SubtractCurrentValue(new HealthPoint(50));
 
         // (0,100)
         hp3.Dump("さらに50ダメージを与えた後。0未満にならない : (0,100)");
     }
 
-    private void TestAddMaxHp()
+    private void TestAddMaxValue()
     {
-        Hp hp = new(100);
+        HealthPoint hp = new(100);
 
         // 最大HPを50増やす
-        Hp hp1 = hp.AddMaxHp(new Hp(50));
+        HealthPoint hp1 = hp.AddMaxValue(new HealthPoint(50));
 
         // (100,150)
         hp1.Dump("最大HPを50増やした後 : (100,150)");
