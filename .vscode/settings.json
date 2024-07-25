@@ -56,5 +56,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TeamGameDevBootcamp.sln"
+    "dotnet.defaultSolution": "TeamGameDevBootcamp.sln",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
 }
