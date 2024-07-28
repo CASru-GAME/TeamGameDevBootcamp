@@ -25,12 +25,12 @@ namespace App.Common.Data
         public int MaxValue => _maxValue;
 
         /// <summary>
-        /// このクラス内のみで使用するコンストラクタ。最大EXPと現在のEXPを指定してEXPを初期化する
+        /// このクラス内外で使用するコンストラクタ。最大EXPと現在のEXPを指定してEXPを初期化する
         /// </summary>
         /// <param name="CurrentValue">設定する現在のEXPのint型の値</param>
         /// <param name="MaxValue">設定するEXPのint型の値</param>
         /// <exception cref="ArgumentException"></exception>
-        private ExperiencePoint(int CurrentValue, int MaxValue)
+        public ExperiencePoint(int CurrentValue, int MaxValue)
         {
             // 0より小さい時には例外を発生させる
             if (CurrentValue < 0)
@@ -45,12 +45,6 @@ namespace App.Common.Data
             this._currentValue = CurrentValue;
             this._maxValue = MaxValue;
         }
-
-        /// <summary>
-        /// 入力された数値を最大EXP・現在のEXPとしてEXPの初期化を行う
-        /// </summary>
-        /// <param name="value">最大EXP・現在のEXPのint型の値</param>
-        public ExperiencePoint(int value) : this(value, value) { }
 
         /// <summary>
         /// 現在のEXPの値を増加する
