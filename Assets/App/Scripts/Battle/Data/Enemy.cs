@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+using App.Common.Data;
 
-namespace App.Common.Data
+namespace App.Battle.Data
 {
-    public class CharacterParameter
+    public class Enemy
     {
+        public string Id { get; private set; }
         public string Name { get; private set; }
         // TODO : パラメータのプロパティを設定する
         public HealthPoint Hp;
