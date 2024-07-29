@@ -5,7 +5,6 @@ namespace App.Common.Data
     public class CharacterParameter
     {
         public string Name { get; private set; }
-        // TODO : パラメータのプロパティを設定する
         public HealthPoint Hp;
         public MagicPoint Mp;
         public AttackPoint Atk;

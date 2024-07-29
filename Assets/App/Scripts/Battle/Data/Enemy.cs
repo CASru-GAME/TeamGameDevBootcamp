@@ -6,7 +6,6 @@ namespace App.Battle.Data
     {
         public string Id { get; private set; }
         public string Name { get; private set; }
-        // TODO : パラメータのプロパティを設定する
         public HealthPoint Hp;
         public MagicPoint Mp;
         public AttackPoint Atk;

@@ -1,14 +1,12 @@
 using App.Battle.Data;
+using System.Collections.Generic;
+using UniRx;
 
 namespace App.Battle.Datastores
 {
     public class BattleEnemyDatastore
     {
-        public Enemy Enemy { get; private set; }
-
-        public BattleEnemyDatastore(Enemy enemy)
-        {
-            Enemy = enemy;
-        }
+        private ReactiveCollection<string> _enemyIds = new();
+        public IEnumerable<string> EnemyIds => _enemyIds;
     }
 }
