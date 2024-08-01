@@ -13,8 +13,8 @@ namespace App.Debug.Battle
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterComponent(_battleDebugEnemyGeneratePresenter).AsImplementedInterfaces();
-            
-            builder.RegisterEntryPoint<BattleDebugEnemyUseCase>();
+
+            builder.RegisterEntryPoint<BattleDebugEnemyGenerateUseCase>();
         }
     }
 }
