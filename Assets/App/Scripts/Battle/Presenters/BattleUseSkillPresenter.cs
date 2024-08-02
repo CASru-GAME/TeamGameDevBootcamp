@@ -4,7 +4,7 @@ using App.Battle.Interfaces.Presenters;
 
 namespace App.Battle.Presenters
 {
-    public class UseSkillPresenter: IUseSkillPresenter
+    public class BattleUseSkillPresenter: IUseSkillPresenter
     {
         public HealthPoint CalculateDamage(CharacterParameter player, BattleSkillData skill, EnemyMasterData enemy)
         {

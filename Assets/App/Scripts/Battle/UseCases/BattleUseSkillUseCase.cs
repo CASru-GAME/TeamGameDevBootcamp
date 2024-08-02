@@ -5,12 +5,12 @@ using App.Battle.Interfaces.UseCases;
 
 namespace App.Battle.UseCases
 {
-    public class UseSkillUseCase: IUseSkillUseCase
+    public class BattleUseSkillUseCase: IUseSkillUseCase
     {
         private readonly BattleSkillDataBase _battleSkillDataBase;
         private readonly EnemyMasterDataBase _enemyMasterDataBase;
 
-        public UseSkillUseCase(BattleSkillDataBase battleSkillDataBase, EnemyMasterDataBase enemyMasterDataBase)
+        public BattleUseSkillUseCase(BattleSkillDataBase battleSkillDataBase, EnemyMasterDataBase enemyMasterDataBase)
         {
             _battleSkillDataBase = battleSkillDataBase;
             _enemyMasterDataBase = enemyMasterDataBase;
@@ -23,7 +23,7 @@ namespace App.Battle.UseCases
 
             if (player.Mp.CurrentValue < skill.ConsumeMp) return;
 
-            UseSkillPresenter useSkillPresenter = new UseSkillPresenter();
+            BattleUseSkillPresenter useSkillPresenter = new BattleUseSkillPresenter();
             HealthPoint damage = useSkillPresenter.CalculateDamage(player, skill, enemy);
 
             MagicPoint consumeMp = new MagicPoint(skill.ConsumeMp);
