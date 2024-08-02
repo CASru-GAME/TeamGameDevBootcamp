@@ -1,26 +1,29 @@
 using UnityEngine;
 using App.Common.Data;
 using System;
+using Unity.VisualScripting;
 
 
-[CreateAssetMenu(fileName = "EnemyMasterData", menuName = "MasterData/EnemyMasterData")]
-
-public class EnemyMasterData : ScriptableObject, ISerializationCallbackReceiver
+namespace App.Common.Data.MasterData
 {
-    [field: SerializeField] public int Id { get; private set; }
-    [field: SerializeField] public string Name { get; private set; }
-    [field: SerializeField] public int Hp { get; private set; }
-    [field: SerializeField] public int Mp { get; private set; }
-    [field: SerializeField] public int Atk { get; private set; }
-    [field: SerializeField] public int Mat { get; private set; }
-    [field: SerializeField] public int Def { get; private set; }
-    [field: SerializeField] public int Mde { get; private set; }
-
-    [field: NonSerialized] public CharacterParameter CharacterParameter { get; private set; }
-
-    public void OnBeforeSerialize() { }
-    public void OnAfterDeserialize()
+    [CreateAssetMenu(fileName = "EnemyMasterData", menuName = "MasterData/EnemyMasterData")]
+    public class EnemyMasterData : ScriptableObject, ISerializationCallbackReceiver
     {
-        CharacterParameter = new CharacterParameter(Name, Hp, Mp, Atk, Mat, Def, Mde);
+        [field: SerializeField] public int Id { get; private set; }
+        [field: SerializeField] public string Name { get; private set; }
+        [field: SerializeField] public int Hp { get; private set; }
+        [field: SerializeField] public int Mp { get; private set; }
+        [field: SerializeField] public int Atk { get; private set; }
+        [field: SerializeField] public int Mat { get; private set; }
+        [field: SerializeField] public int Def { get; private set; }
+        [field: SerializeField] public int Mde { get; private set; }
+
+        [field: NonSerialized] public CharacterParameter CharacterParameter { get; private set; }
+
+        public void OnBeforeSerialize() { }
+        public void OnAfterDeserialize()
+        {
+            CharacterParameter = new CharacterParameter(Name, Hp, Mp, Atk, Mat, Def, Mde);
+        }
     }
 }
