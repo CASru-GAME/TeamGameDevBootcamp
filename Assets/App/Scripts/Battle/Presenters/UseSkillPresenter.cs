@@ -1,10 +1,10 @@
-using App.Battle.UseCases;
 using App.Common.Data.MasterData;
 using App.Common.Data;
+using App.Battle.Interfaces.Presenters;
 
 namespace App.Battle.Presenters
 {
-    public class CalculateDamagePresenter
+    public class UseSkillPresenter: IUseSkillPresenter
     {
         public HealthPoint CalculateDamage(CharacterParameter player, BattleSkillData skill, EnemyMasterData enemy)
         {

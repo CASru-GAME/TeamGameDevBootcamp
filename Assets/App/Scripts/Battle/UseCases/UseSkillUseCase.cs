@@ -1,12 +1,11 @@
 using App.Common.Data.MasterData;
-using App.Battle.Data;
 using App.Common.Data;
 using App.Battle.Presenters;
-using Cysharp.Threading.Tasks.Triggers;
+using App.Battle.Interfaces.UseCases;
 
 namespace App.Battle.UseCases
 {
-    public class UseSkillUseCase
+    public class UseSkillUseCase: IUseSkillUseCase
     {
         private readonly BattleSkillDataBase _battleSkillDataBase;
         private readonly EnemyMasterDataBase _enemyMasterDataBase;
@@ -24,8 +23,8 @@ namespace App.Battle.UseCases
 
             if (player.Mp.CurrentValue < skill.ConsumeMp) return;
 
-            CalculateDamagePresenter calculateDamagePresenter = new CalculateDamagePresenter();
-            HealthPoint damage = calculateDamagePresenter.CalculateDamage(player, skill, enemy);
+            UseSkillPresenter useSkillPresenter = new UseSkillPresenter();
+            HealthPoint damage = useSkillPresenter.CalculateDamage(player, skill, enemy);
 
             MagicPoint consumeMp = new MagicPoint(skill.ConsumeMp);
             enemy.CharacterParameter.Hp = enemy.CharacterParameter.Hp.SubtractCurrentValue(damage);
