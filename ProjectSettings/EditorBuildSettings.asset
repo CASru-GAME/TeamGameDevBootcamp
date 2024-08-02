@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/App/Scenes/BattleEntryPoint/BattleDebug.unity
     guid: 1d929971a965f53499c3778ba36dd465
+  - enabled: 1
+    path: Assets/App/Scenes/BattleEntryPoint/Battle.unity
+    guid: db6f3ef31ff98a64286e8183e9a68b3b
   m_configObjects: {}
