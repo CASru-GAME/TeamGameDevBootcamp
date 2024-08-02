@@ -9,7 +9,7 @@ namespace App.Common.Data
         /// 魔法攻撃力
         /// </summary>F
         private readonly int _currentValue;
-        public int CuurentValue => _currentValue;
+        public int CurrentValue => _currentValue;
 
         //コンストラクタ
         public MagicAttackPoint(int value)
@@ -24,12 +24,12 @@ namespace App.Common.Data
 
         public MagicAttackPoint AddCurrentValue(MagicAttackPoint value)
         {
-            return new MagicAttackPoint(this._currentValue + value.CuurentValue);
+            return new MagicAttackPoint(this._currentValue + value.CurrentValue);
         }
 
         public MagicAttackPoint SubtractCurrentValue(MagicAttackPoint value)
         {
-            return new MagicAttackPoint(this._currentValue - value.CuurentValue);
+            return new MagicAttackPoint(this._currentValue - value.CurrentValue);
         }
 
         public void Dump(string message)
