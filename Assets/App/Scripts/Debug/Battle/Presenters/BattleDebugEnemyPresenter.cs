@@ -7,7 +7,7 @@ using VContainer.Unity;
 
 namespace App.Debug.Battle.Presenters
 {
-    public class BattleDebugEnemyGeneratePresenter : MonoBehaviour, IBattleDebugEnemyGeneratePresenter, IInitializable, IDisposable
+    public class BattleDebugEnemyPresenter : MonoBehaviour, IBattleDebugEnemyPresenter, IInitializable, IDisposable
     {
         [Header("Enemy")]
         [SerializeField] private Button _generateEnemyButton;

@@ -8,13 +8,13 @@ namespace App.Debug.Battle
 {
     public class BattleDebugLifetimeScope : LifetimeScope
     {
-        [SerializeField] private BattleDebugEnemyGeneratePresenter _BattleDebugEnemyGeneratePresenter;
+        [SerializeField] private BattleDebugEnemyPresenter _BattleDebugEnemyPresenter;
 
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.RegisterComponent(_BattleDebugEnemyGeneratePresenter).AsImplementedInterfaces();
+            builder.RegisterComponent(_BattleDebugEnemyPresenter).AsImplementedInterfaces();
 
-            builder.RegisterEntryPoint<BattleDebugEnemyGenerateUseCase>();
+            builder.RegisterEntryPoint<BattleDebugEnemyUseCase>();
         }
     }
 }

@@ -3,7 +3,7 @@ using UniRx;
 
 namespace App.Debug.Battle.Interfaces.Presenters
 {
-    public interface IBattleDebugEnemyGeneratePresenter
+    public interface IBattleDebugEnemyPresenter
     {
         IObservable<Unit> OnGenerateEnemy { get; }
     }

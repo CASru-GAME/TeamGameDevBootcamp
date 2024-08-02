@@ -1,6 +1,6 @@
 namespace App.Battle.Interfaces.UseCases
 {
-    public interface IBattleEnemyGenerateUseCase
+    public interface IBattleEnemyUseCase
     {
         void GenerateEnemy();
     }

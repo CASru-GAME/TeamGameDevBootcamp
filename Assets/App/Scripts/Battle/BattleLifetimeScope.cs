@@ -12,6 +12,6 @@ public class BattleLifetimeScope : LifetimeScope
     protected override void Configure(IContainerBuilder builder)
     {
         builder.Register<BattleEnemyDatastore>(Lifetime.Singleton).AsImplementedInterfaces();
-        builder.Register<BattleEnemyGenerateUseCase>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<BattleEnemyUseCase>(Lifetime.Singleton).AsImplementedInterfaces();
     }
 }

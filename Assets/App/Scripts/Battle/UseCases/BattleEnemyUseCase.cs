@@ -7,12 +7,12 @@ using VContainer.Unity;
 
 namespace App.Battle.UseCases
 {
-    public class BattleEnemyGenerateUseCase : IBattleEnemyGenerateUseCase
+    public class BattleEnemyUseCase : IBattleEnemyUseCase
     {
         private readonly IBattleEnemyDatastore _BattleEnemyDatastore;
 
         [Inject]
-        public BattleEnemyGenerateUseCase(
+        public BattleEnemyUseCase(
             IBattleEnemyDatastore battleEnemyDatastore
         )
         {
