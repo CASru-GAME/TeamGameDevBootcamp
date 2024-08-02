@@ -1,0 +1,34 @@
+using App.Common.Data.MasterData;
+using App.Battle.Data;
+using App.Common.Data;
+
+namespace App.Battle.Presenters
+{
+    public class UseSkillPresenter
+    {
+        private readonly BattleSkillDataBase _battleSkillDataBase;
+        private readonly EnemyMasterDataBase _enemyMasterDataBase;
+
+        public UseSkillPresenter(BattleSkillDataBase battleSkillDataBase, EnemyMasterDataBase enemyMasterDataBase)
+        {
+            _battleSkillDataBase = battleSkillDataBase;
+            _enemyMasterDataBase = enemyMasterDataBase;
+        }
+
+        private HealthPoint CalculateDamage(CharacterParameter player, BattleSkillData skill, EnemyMasterData enemy)
+        {
+            HealthPoint damage = new HealthPoint(player.Atk.CurrentValue*skill.AtkRate - enemy.CharacterParameter.Def.CurrentValue);
+            return damage;
+        }
+
+        public void UseSkill(CharacterParameter player, int skillId, int enemyId)
+        {
+            var skill = _battleSkillDataBase.BattleSkillData[skillId];
+            var enemy = _enemyMasterDataBase.EnemyMasterData[enemyId];
+
+            HealthPoint damage = CalculateDamage(player, skill, enemy);
+
+            enemy.CharacterParameter.Hp = enemy.CharacterParameter.Hp.SubtractCurrentValue(damage);
+        }
+    }
+}
