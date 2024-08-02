@@ -27,8 +27,10 @@ namespace App.Battle.Presenters
             var enemy = _enemyMasterDataBase.EnemyMasterData[enemyId];
 
             HealthPoint damage = CalculateDamage(player, skill, enemy);
+            MagicPoint consumeMp = new MagicPoint(skill.CnsMp);
 
             enemy.CharacterParameter.Hp = enemy.CharacterParameter.Hp.SubtractCurrentValue(damage);
+            player.Mp = player.Mp.SubtractCurrentValue(consumeMp);
         }
     }
 }
