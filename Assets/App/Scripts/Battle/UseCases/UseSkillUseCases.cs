@@ -3,14 +3,14 @@ using App.Battle.Data;
 using App.Common.Data;
 using Cysharp.Threading.Tasks.Triggers;
 
-namespace App.Battle.Presenters
+namespace App.Battle.UseCases
 {
-    public class UseSkillPresenter
+    public class UseSkillUseCases
     {
         private readonly BattleSkillDataBase _battleSkillDataBase;
         private readonly EnemyMasterDataBase _enemyMasterDataBase;
 
-        public UseSkillPresenter(BattleSkillDataBase battleSkillDataBase, EnemyMasterDataBase enemyMasterDataBase)
+        public UseSkillUseCases(BattleSkillDataBase battleSkillDataBase, EnemyMasterDataBase enemyMasterDataBase)
         {
             _battleSkillDataBase = battleSkillDataBase;
             _enemyMasterDataBase = enemyMasterDataBase;
@@ -32,7 +32,7 @@ namespace App.Battle.Presenters
             var enemy = _enemyMasterDataBase.EnemyMasterData[enemyId];
 
             HealthPoint damage = CalculateDamage(player, skill, enemy);
-            MagicPoint consumeMp = new MagicPoint(skill.CnsMp);
+            MagicPoint consumeMp = new MagicPoint(skill.ConsumeMp);
 
             enemy.CharacterParameter.Hp = enemy.CharacterParameter.Hp.SubtractCurrentValue(damage);
             player.Mp = player.Mp.SubtractCurrentValue(consumeMp);
