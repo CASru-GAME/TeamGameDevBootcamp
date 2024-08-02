@@ -9,8 +9,8 @@ namespace App.Debug.Battle.UseCases
 {
     public class BattleDebugEnemyGenerateUseCase : IInitializable, IDisposable
     {
-        private readonly IBattleDebugEnemyGeneratePresenter _battleDebugEnemyGeneratePresenter;
-        private readonly IBattleEnemyGenerateUseCase _battleEnemyGenerateUseCase;
+        private readonly IBattleDebugEnemyGeneratePresenter _BattleDebugEnemyGeneratePresenter;
+        private readonly IBattleEnemyGenerateUseCase _BattleEnemyGenerateUseCase;
 
         private readonly CompositeDisposable _disposables = new();
 
@@ -20,14 +20,14 @@ namespace App.Debug.Battle.UseCases
             IBattleDebugEnemyGeneratePresenter battleDebugEnemyPresenter
         )
         {
-            _battleEnemyGenerateUseCase = battleEnemyGenerateUseCase;
-            _battleDebugEnemyGeneratePresenter = battleDebugEnemyPresenter;
+            _BattleEnemyGenerateUseCase = battleEnemyGenerateUseCase;
+            _BattleDebugEnemyGeneratePresenter = battleDebugEnemyPresenter;
         }
 
         public void Initialize()
         {
-            _battleDebugEnemyGeneratePresenter.OnGenerateEnemy
-                .Subscribe(x => _battleEnemyGenerateUseCase.GenerateEnemy())
+            _BattleDebugEnemyGeneratePresenter.OnGenerateEnemy
+                .Subscribe(x => _BattleEnemyGenerateUseCase.GenerateEnemy())
                 .AddTo(_disposables);
         }
 
