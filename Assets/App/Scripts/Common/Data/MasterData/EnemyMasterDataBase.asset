@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8956cf35dc486488956b2735827c95, type: 3}
   m_Name: EnemyMasterDataBase
   m_EditorClassIdentifier: 
+  <EnemyMasterData>k__BackingField:
+  - {fileID: 11400000, guid: ad6224f42900e8741a3bd2ed2956e979, type: 2}

@@ -724,7 +724,7 @@ MonoBehaviour:
     TypeName: BattleLifetimeScope
   autoRun: 1
   autoInjectGameObjects: []
-  _battleDebugEnemyGeneratePresenter: {fileID: 2048206442}
+  _BattleDebugEnemyPresenter: {fileID: 2048206442}
 --- !u!1 &1409482516
 GameObject:
   m_ObjectHideFlags: 0
