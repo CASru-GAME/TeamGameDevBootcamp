@@ -20,13 +20,13 @@ namespace App.Battle.Presenters
 
         public IBattleState Execute()
         {
-            UnityEngine.Debug.Log("CurrentState: BattleStateItemsPresenter");
+            UnityEngine.Debug.Log("CurrentState: Select Item");
             return new BattleStateItemsPresenter();
         }
 
         public IBattleState Cancel()
         {
-            UnityEngine.Debug.Log("CurrentState: BattleStateItemsPresenter");
+            UnityEngine.Debug.Log("CurrentState: Select Item");
             return new BattleStateItemsPresenter();
         }
     }

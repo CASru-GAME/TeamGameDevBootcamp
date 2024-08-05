@@ -20,13 +20,13 @@ namespace App.Battle.Presenters
 
         public IBattleState Execute()
         {
-            UnityEngine.Debug.Log("CurrentState: BattleStateSkillsTargetPresenter");
+            UnityEngine.Debug.Log("CurrentState: Select Target(Skill)");
             return new BattleStateSkillsTargetPresenter();
         }
 
         public IBattleState Cancel()
         {
-            UnityEngine.Debug.Log("CurrentState: BattleStateFirstPresenter");
+            UnityEngine.Debug.Log("CurrentState: Select Command");
             return new BattleStateFirstPresenter();
         }
     }

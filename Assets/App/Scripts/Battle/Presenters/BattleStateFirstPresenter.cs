@@ -33,13 +33,13 @@ namespace App.Battle.Presenters
             switch(_nextStateIndex)
             {
                 case 0:
-                    UnityEngine.Debug.Log("CurrentState: BattleStateSkillsPresenter");
+                    UnityEngine.Debug.Log("CurrentState: Select Skill");
                     return new BattleStateSkillsPresenter();
                 case 1:
-                    UnityEngine.Debug.Log("CurrentState: BattleStateFirstPresenter");
+                    UnityEngine.Debug.Log("CurrentState: Select Command");
                     return this;
                 case 2:
-                    UnityEngine.Debug.Log("CurrentState: BattleStateItemsPresenter");
+                    UnityEngine.Debug.Log("CurrentState: Select Item");
                     return new BattleStateItemsPresenter();
             }
             return null;
@@ -47,7 +47,7 @@ namespace App.Battle.Presenters
 
         public IBattleState Cancel()
         {
-            UnityEngine.Debug.Log("CurrentState: BattleStateFirstPresenter");
+            UnityEngine.Debug.Log("CurrentState: Select Command");
             return this;
         }
     }
