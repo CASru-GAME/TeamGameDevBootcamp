@@ -7,14 +7,15 @@ namespace App.Battle.Presenters
 {
     public class BattleStateSkillsPresenter : IBattleState
     {
-
         public void IncreaseIndex()
         {
+            UnityEngine.Debug.Log("CurrentIndex: 0");
             return;
         }
 
         public void DecreaseIndex()
         {
+            UnityEngine.Debug.Log("CurrentIndex: 0");
             return;
         }
 

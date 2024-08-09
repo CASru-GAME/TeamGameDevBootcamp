@@ -11,6 +11,9 @@ namespace App.Debug.Battle
     {
         [SerializeField] private BattleDebugEnemyPresenter _BattleDebugEnemyPresenter;
         [SerializeField] private BattleDebugExecuteStatePresenter _BattleDebugExecuteStatePresenter;
+        [SerializeField] private BattleDebugCancelStatePresenter _BattleDebugCancelStatePresenter;
+        [SerializeField] private BattleDebugIncreaseStateIndexPresenter _BattleDebugIncreaseStateIndexPresenter;
+        [SerializeField] private BattleDebugDecreaseStateIndexPresenter _BattleDebugDecreaseStateIndexPresenter;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -21,6 +24,18 @@ namespace App.Debug.Battle
             builder.RegisterComponent(_BattleDebugExecuteStatePresenter).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<BattleDebugExecuteStateUseCase>();
+
+            builder.RegisterComponent(_BattleDebugCancelStatePresenter).AsImplementedInterfaces();
+
+            builder.RegisterEntryPoint<BattleDebugCancelStateUseCase>();
+
+            builder.RegisterComponent(_BattleDebugIncreaseStateIndexPresenter).AsImplementedInterfaces();
+
+            builder.RegisterEntryPoint<BattleDebugIncreaseStateIndexUseCase>();
+
+            builder.RegisterComponent(_BattleDebugDecreaseStateIndexPresenter).AsImplementedInterfaces();
+
+            builder.RegisterEntryPoint<BattleDebugDecreaseStateIndexUseCase>();
 
             builder.Register<BattleStateMachineUseCase>(Lifetime.Singleton).AsImplementedInterfaces();
         }

@@ -12,6 +12,16 @@ namespace App.Battle.UseCases
     {
         private BattleStateMachinePresenter _battleStateMachinePresenter = new BattleStateMachinePresenter();
 
+        public void IncreaseIndex()
+        {
+            _battleStateMachinePresenter.IncreaseIndex();
+        }
+
+        public void DecreaseIndex()
+        {
+            _battleStateMachinePresenter.DecreaseIndex();
+        }
+
         public void Execute()
         {
             _battleStateMachinePresenter.Execute();

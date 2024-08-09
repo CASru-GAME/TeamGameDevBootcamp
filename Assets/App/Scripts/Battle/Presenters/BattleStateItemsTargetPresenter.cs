@@ -10,11 +10,13 @@ namespace App.Battle.Presenters
 
         public void IncreaseIndex()
         {
+            UnityEngine.Debug.Log("CurrentIndex: 0");
             return;
         }
 
         public void DecreaseIndex()
         {
+            UnityEngine.Debug.Log("CurrentIndex: 0");
             return;
         }
 
