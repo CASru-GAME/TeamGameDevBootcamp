@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using App.Battle.Interfaces;
+using App.Battle.Interfaces.Presenters;
 
 namespace App.Battle.Presenters
 {
-    public class BattleStateMachinePresenter
+    public class BattleStateMachinePresenter : IBattleStateMachinePresenter
     {
         private IBattleState _currentState = new BattleStateFirstPresenter();
 

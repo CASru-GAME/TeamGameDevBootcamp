@@ -1008,10 +1008,7 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   _BattleDebugEnemyPresenter: {fileID: 2048206442}
-  _BattleDebugExecuteStatePresenter: {fileID: 2048206443}
-  _BattleDebugCancelStatePresenter: {fileID: 2048206444}
-  _BattleDebugIncreaseStateIndexPresenter: {fileID: 2048206445}
-  _BattleDebugDecreaseStateIndexPresenter: {fileID: 2048206446}
+  _BattleDebugStatePresenter: {fileID: 2048206443}
 --- !u!1 &842995928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,9 +1589,6 @@ GameObject:
   - component: {fileID: 2048206441}
   - component: {fileID: 2048206442}
   - component: {fileID: 2048206443}
-  - component: {fileID: 2048206444}
-  - component: {fileID: 2048206445}
-  - component: {fileID: 2048206446}
   m_Layer: 0
   m_Name: BattleDebugPresenter
   m_TagString: Untagged
@@ -1639,48 +1633,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2048206440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96915dce1f4e2d6429445aa22fd66fa1, type: 3}
+  m_Script: {fileID: 11500000, guid: e34d606a49d146b4094830e672c1588f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _executeStateButton: {fileID: 842995930}
---- !u!114 &2048206444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048206440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23de40b3f37236c45857e30018028ebf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _cancelStateButton: {fileID: 416316749}
---- !u!114 &2048206445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048206440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b81a831a72bb454c952ff010688b5b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _increaseStateIndexButton: {fileID: 1110636001}
---- !u!114 &2048206446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048206440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7bf9fad77930e4c87150da8a2be263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _decreaseStateIndexButton: {fileID: 1387411689}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

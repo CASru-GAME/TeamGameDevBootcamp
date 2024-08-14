@@ -1,5 +1,5 @@
 using App.Battle.Interfaces.UseCases;
-using App.Debug.Battle.Interfaces.Presenters;
+using App.Battle.Interfaces.Presenters;
 using App.Battle.Presenters;
 using System;
 using UniRx;
@@ -10,26 +10,34 @@ namespace App.Battle.UseCases
 {
     public class BattleStateMachineUseCase : IBattleStateMachineUseCase
     {
-        private BattleStateMachinePresenter _battleStateMachinePresenter = new BattleStateMachinePresenter();
+        private IBattleStateMachinePresenter _BattleStateMachinePresenter;
+
+        [Inject]
+        public BattleStateMachineUseCase(
+            IBattleStateMachinePresenter battleStateMachinePresenter
+        )
+        {
+            _BattleStateMachinePresenter = battleStateMachinePresenter;
+        }
 
         public void IncreaseIndex()
         {
-            _battleStateMachinePresenter.IncreaseIndex();
+            _BattleStateMachinePresenter.IncreaseIndex();
         }
 
         public void DecreaseIndex()
         {
-            _battleStateMachinePresenter.DecreaseIndex();
+            _BattleStateMachinePresenter.DecreaseIndex();
         }
 
         public void Execute()
         {
-            _battleStateMachinePresenter.Execute();
+            _BattleStateMachinePresenter.Execute();
         }
 
         public void Cancel()
         {
-            _battleStateMachinePresenter.Cancel();     
+            _BattleStateMachinePresenter.Cancel();     
         }
     }
 }
