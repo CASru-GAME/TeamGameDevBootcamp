@@ -21,7 +21,7 @@ namespace App.Battle.UseCases
 
         public void GeneratePlayer()
         {
-            _BattlePlayerDatastore.AddPlayer("1", new CharacterParameter());
+            _BattlePlayerDatastore.AddPlayer("1", new CharacterParameter(), new ExperiencePoint(0,10));
             UnityEngine.Debug.Log($"{"1"} generated");
         }
     }

@@ -13,14 +13,14 @@ namespace App.Battle.Datastores
         private Dictionary<string, Player> _players = new();
         public IEnumerable<Player> Players => _players.Values.ToArray();
 
-        public void AddPlayer(string id, CharacterParameter characterParameter)
+        public void AddPlayer(string id, CharacterParameter characterParameter, ExperiencePoint experiencePoint)
         {
             if(characterParameter == null)
             {
                 throw new NullReferenceException($"{nameof(CharacterParameter)} is null");
             }
 
-            var player = new Player(id, characterParameter);
+            var player = new Player(id, characterParameter, experiencePoint);
             UnityEngine.Debug.Log($"{player} added");
 
             _players.Add(id, player);
