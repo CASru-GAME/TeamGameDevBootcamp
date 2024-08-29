@@ -13,6 +13,8 @@ public class BattleLifetimeScope : LifetimeScope
     {
         builder.Register<BattleEnemyDatastore>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<BattleEnemyUseCase>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<BattlePlayerDatastore>(Lifetime.Singleton).AsImplementedInterfaces();
+        builder.Register<BattlePlayerUseCase>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<BattleStateMachineUseCase>(Lifetime.Singleton).AsImplementedInterfaces();
         builder.Register<BattleStateMachinePresenter>(Lifetime.Singleton).AsImplementedInterfaces();
     }
