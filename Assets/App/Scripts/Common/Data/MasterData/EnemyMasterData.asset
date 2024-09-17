@@ -12,3 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9188f7c052e650c41ae77328db029c77, type: 3}
   m_Name: EnemyMasterData
   m_EditorClassIdentifier: 
+  <Id>k__BackingField: 1
+  <Name>k__BackingField: test
+  <Hp>k__BackingField: 10
+  <Mp>k__BackingField: 10
+  <Atk>k__BackingField: 10
+  <Mat>k__BackingField: 10
+  <Def>k__BackingField: 10
+  <Mde>k__BackingField: 10
