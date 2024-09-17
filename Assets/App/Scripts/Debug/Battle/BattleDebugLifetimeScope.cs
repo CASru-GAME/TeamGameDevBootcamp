@@ -10,6 +10,7 @@ namespace App.Debug.Battle
     {
         [SerializeField] private BattleDebugEnemyPresenter _BattleDebugEnemyPresenter;
         [SerializeField] private BattleDebugStatePresenter _BattleDebugStatePresenter;
+        [SerializeField] private BattleDebugUseSkillPresenter _BattleDebugUseSkillPresenter;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -17,6 +18,8 @@ namespace App.Debug.Battle
             builder.RegisterEntryPoint<BattleDebugEnemyUseCase>();
             builder.RegisterComponent(_BattleDebugStatePresenter).AsImplementedInterfaces();
             builder.RegisterEntryPoint<BattleDebugStateUseCase>();
+            builder.RegisterComponent(_BattleDebugUseSkillPresenter).AsImplementedInterfaces();
+            builder.RegisterEntryPoint<BattleDebugUseSkillUseCase>();
         }
     }
 }

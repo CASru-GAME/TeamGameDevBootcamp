@@ -1,25 +1,25 @@
-using App.Common.Data.MasterData;
 using App.Common.Data;
 using App.Battle.Presenters;
 using App.Battle.Interfaces.UseCases;
+using App.Battle.Interfaces.Datastores;
 
 namespace App.Battle.UseCases
 {
-    public class BattleUseSkillUseCase: IUseSkillUseCase
+    public class BattleUseSkillUseCase : IBattleUseSkillUseCase
     {
-        private readonly BattleSkillDataBase _battleSkillDataBase;
-        private readonly EnemyMasterDataBase _enemyMasterDataBase;
+        private readonly IBattleSkillDataBase _battleSkillDataBase;
+        private readonly IBattleEnemyDatastore _battleEnemyDatastore;
 
-        public BattleUseSkillUseCase(BattleSkillDataBase battleSkillDataBase, EnemyMasterDataBase enemyMasterDataBase)
+        public BattleUseSkillUseCase(IBattleSkillDataBase battleSkillDataBase, IBattleEnemyDatastore battleEnemyDatastore)
         {
             _battleSkillDataBase = battleSkillDataBase;
-            _enemyMasterDataBase = enemyMasterDataBase;
+            _battleEnemyDatastore = battleEnemyDatastore;
         }
 
         public void UseSkill(CharacterParameter player, int skillId, int enemyId)
         {
-            var skill = _battleSkillDataBase.BattleSkillData[skillId];
-            var enemy = _enemyMasterDataBase.EnemyMasterData[enemyId];
+            var skill = _battleSkillDataBase.[skillId];
+            var enemy = _battleEnemyDatastore.GetEnemyBy($"{enemyId}");
 
             if (player.Mp.CurrentValue < skill.ConsumeMp) return;
 
@@ -27,8 +27,9 @@ namespace App.Battle.UseCases
             HealthPoint damage = useSkillPresenter.CalculateDamage(player, skill, enemy);
 
             MagicPoint consumeMp = new MagicPoint(skill.ConsumeMp);
-            enemy.CharacterParameter.Hp = enemy.CharacterParameter.Hp.SubtractCurrentValue(damage);
+            enemy.characterParameter.Hp = enemy.characterParameter.Hp.SubtractCurrentValue(damage);
             player.Mp = player.Mp.SubtractCurrentValue(consumeMp);
+            UnityEngine.Debug.Log($"{player.Name}は{enemy.characterParameter.Name}に{damage.CurrentValue}のダメージを与えた");
         }
     }
 }

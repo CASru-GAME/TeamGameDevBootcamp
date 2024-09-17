@@ -4,7 +4,7 @@ using App.Common.Data.MasterData;
 
 namespace App.Battle.Interfaces.UseCases
 {
-    public interface IUseSkillUseCase
+    public interface IBattleUseSkillUseCase
     {
         void UseSkill(CharacterParameter player, int skillId, int enemyId);
     }
